@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class EjemploJdbc {
+public class EjemploJdbcUpdate {
     public static void main(String[] args) {
 
         try (Connection conn = ConexionBaseDatos.getInstance()) {
@@ -21,14 +21,14 @@ public class EjemploJdbc {
             System.out.println("===========Obtener Por id===========");
             System.out.println(repositorio.porId(2L));
 
-            System.out.println("===========Insertar Nuevo Producto===========");
+            System.out.println("===========Editar Producto===========");
             Producto producto = new Producto();
-            producto.setNombre("Teclado Mecanico");
-            producto.setPrecio(500);
-            producto.setFechaRegistro(new Date());
+            producto.setId(3L);
+            producto.setNombre("Teclado Razer Mecanico");
+            producto.setPrecio(740);
             repositorio.guardar(producto);
 
-            System.out.println("Producto Guardado con exito");
+            System.out.println("Producto Editado con exito");
             repositorio.listar().forEach(System.out::println);
 
 
