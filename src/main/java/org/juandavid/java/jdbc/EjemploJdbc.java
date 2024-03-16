@@ -1,5 +1,6 @@
 package org.juandavid.java.jdbc;
 
+import org.juandavid.java.jdbc.modelo.Categoria;
 import org.juandavid.java.jdbc.modelo.Producto;
 import org.juandavid.java.jdbc.repositorio.ProductoRepositorioImpl;
 import org.juandavid.java.jdbc.repositorio.Repositorio;
@@ -26,6 +27,9 @@ public class EjemploJdbc {
             producto.setNombre("Teclado Mecanico");
             producto.setPrecio(500);
             producto.setFechaRegistro(new Date());
+            Categoria categoria = new Categoria();
+            categoria.setId(3L);
+            producto.setCategoria(categoria);
             repositorio.guardar(producto);
 
             System.out.println("Producto Guardado con exito");
